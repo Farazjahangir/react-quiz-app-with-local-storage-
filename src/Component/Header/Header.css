@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    background-color: #34495e;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+.text-white{
+    color: white;
+}
+#header p{
+    font-size: 1.4em;
+}
+
+@media (max-width : 650px){
+    #header p{
+        display: none;
+    }
+    #header h2 , #header h3{
+        font-size: 1.3em;
+    }
+}

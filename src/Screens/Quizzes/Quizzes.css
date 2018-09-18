@@ -1,0 +1,9 @@
+.quiz-box{
+    width: 90%;
+}
+.quiz-box ul li:hover{
+    background-color: rgba(211, 211, 211, 0.6);
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgba(0, 0, 255, 0.6);
+}
