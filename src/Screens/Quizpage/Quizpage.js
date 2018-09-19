@@ -14,7 +14,11 @@ class Quizpage extends Component{
         }
 
     componentWillMount(){
+        let users = JSON.parse((localStorage.getItem("users")))
         quizIndex= localStorage.getItem("selectedQuizIndex")
+        let userIndex = localStorage.getItem("userIndex")
+
+        
          int =setInterval(()=>{
             let time = this.state.time
             this.setState({time : time - 1})
@@ -23,39 +27,50 @@ class Quizpage extends Component{
     }
 
     render(){
+        let users = JSON.parse((localStorage.getItem("users")))
+        quizIndex= localStorage.getItem("selectedQuizIndex")
+        let userIndex = localStorage.getItem("userIndex")
+
         const {quizQuestions , nextQuestion , index , timeUpFunc} = this.props;
         let {userAnswer , time} = this.state
         {           
-            if(time === 0){
+            if((users[userIndex].quizData[quizIndex].completeQuizIndex != quizIndex)){
+                swal("Completed")
+                console.log(users[userIndex].quizData[quizIndex].completeQuizIndex == quizIndex);
+                clearInterval(int)
+
+            }
+    
+            else if(time === 0){
                 clearInterval(int)
                 swal("Sorry" ,"Time's up" , "error" )
                 timeUpFunc()
-            }           
+            }    
+            
+            var questions = quizQuestions[quizIndex].questions[index]
+            return(
+                <div className="jumbotron my-5">
+                    <p className="text-right">Time left {time}</p>
+                    <h3>{questions.question}</h3>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" value={questions.option1}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option1}
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" value={questions.option2}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option2}
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" value={questions.option3}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option3}
+                        </label>
+                    </div>
+                    <input type="button" value="Next" className="btn btn-success my-2" onClick={()=>{nextQuestion(userAnswer)}} />
+                </div>
+            )
         }
-        var questions = quizQuestions[quizIndex].questions[index]
-        
-        return(
-            <div className="jumbotron my-5">
-                <p className="text-right">Time left {time}</p>
-                <h3>{questions.question}</h3>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" value={questions.option1}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option1}
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" value={questions.option2}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option2}
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="radio" value={questions.option3}  class="form-check-input" name="optradio" onChange={(e)=>{this.setState({userAnswer : e.target.value})}} />{questions.option3}
-                    </label>
-                </div>
-                <input type="button" value="Next" className="btn btn-success my-2" onClick={()=>{nextQuestion(userAnswer)}} />
-            </div>
-        )
     }
  }
 

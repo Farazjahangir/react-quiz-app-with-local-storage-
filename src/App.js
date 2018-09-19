@@ -12,7 +12,6 @@ import Protect from './Screens/Protect/Protect'
 import Quizpage from './Screens/Quizpage/Quizpage'
 
 var userScore = 0;
-
 const quizList = [
   {
     quizName : "Html 5" , 
@@ -192,6 +191,8 @@ class App extends Component {
       }
       if(localStorage.getItem("users") !== null){
          users = JSON.parse(localStorage.getItem("users" , users));
+         console.log("USERS" , users);
+         
       }
       users.push(user)
       localStorage.setItem("users" , JSON.stringify(users))
@@ -219,11 +220,12 @@ class App extends Component {
         swal("Error" , "Wrong Email or Password" , "error")
         return false
       }
-      usersArr.map((value)=>{
+      usersArr.map((value , index)=>{
           if(email === value.email && password === value.password){
               this.setState({isLogin : true , signInForm : false})
               localStorage.setItem("isUser" , true)
               userFound = true
+              localStorage.setItem("userIndex" , index)
           }   
         })
         if(!userFound){
@@ -259,10 +261,12 @@ class App extends Component {
       }
     }
     nextQuestion(ans){
+
       let { i } = this.state
       var quizIndex = localStorage.getItem("selectedQuizIndex")      
       if(quizList[quizIndex].questions[i].correctAnswer === ans){
         userScore = userScore + 1 ;
+        
       }
       localStorage.setItem("quizNo" , i);
       i = i + 1;
@@ -271,9 +275,29 @@ class App extends Component {
         this.setState({i})  
       }
       else{
+        let quizDataArr
+        var userIndex = localStorage.getItem("userIndex")
+        var completeQuizIndex = localStorage.getItem("selectedQuizIndex")
+        
+
+        let obj = {
+          completeQuizIndex : completeQuizIndex,
+          score : userScore, 
+        }
+        
+        
         swal("Quiz Complete" , "Your Score " + userScore , "success")
         this.setState({quizPage : false , isLogin : true , i: 0})
         userScore = 0;
+        let users=JSON.parse((localStorage.getItem("users")))
+        
+        // console.log(users[userIndex].quizData);
+        if(users[userIndex].quizData === undefined){
+          console.log("if");  
+          quizDataArr =  users[userIndex].quizData = []
+        }
+        users[userIndex].quizData.push(obj)
+        localStorage.setItem("users" , JSON.stringify(users))
       }
     }
 
