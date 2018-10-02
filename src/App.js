@@ -165,6 +165,8 @@ class App extends Component {
       this.nextQuestion = this.nextQuestion.bind(this)
       this.logout = this.logout.bind(this)
       this.timeUp = this.timeUp.bind(this)
+      this.returnToHome = this.returnToHome.bind(this)
+
     }
     showSignupForm(){
       this.setState({signUpForm : true , signInForm : false})
@@ -178,7 +180,8 @@ class App extends Component {
       let user = {
           userName,
           email,
-          password 
+          password,
+          quizData : []
       }
       
       if(email === "" || password === "" || userName === ""){
@@ -255,13 +258,13 @@ class App extends Component {
       const {authenticateKey} = this.state
       if(authenticateKey == key){
         this.setState({protectkeyPage : false , quizPage : true})
+        localStorage.setItem("quizStarted" , true)
       }
       else{
         swal("Error" , "Wrong Key" , "error")
       }
     }
     nextQuestion(ans){
-
       let { i } = this.state
       var quizIndex = localStorage.getItem("selectedQuizIndex")      
       if(quizList[quizIndex].questions[i].correctAnswer === ans){
@@ -275,6 +278,7 @@ class App extends Component {
         this.setState({i})  
       }
       else{
+        localStorage.setItem("quizStarted" , false)
         let quizDataArr
         var userIndex = localStorage.getItem("userIndex")
         var completeQuizIndex = localStorage.getItem("selectedQuizIndex")
@@ -290,13 +294,10 @@ class App extends Component {
         this.setState({quizPage : false , isLogin : true , i: 0})
         userScore = 0;
         let users=JSON.parse((localStorage.getItem("users")))
+        let userObj = users[userIndex].quizData 
         
-        // console.log(users[userIndex].quizData);
-        if(users[userIndex].quizData === undefined){
-          console.log("if");  
-          quizDataArr =  users[userIndex].quizData = []
-        }
-        users[userIndex].quizData.push(obj)
+        console.log(users[userIndex].quizData);
+        userObj.push(obj)
         localStorage.setItem("users" , JSON.stringify(users))
       }
     }
@@ -304,9 +305,16 @@ class App extends Component {
     timeUp(end){
       this.setState({quizPage : false , isLogin : true})   
     }
+    returnToHome(){
+      this.setState({isLogin : true , quizPage : false})
+    }
 
     componentWillMount(){
-      if(localStorage.getItem("isUser")){
+      let startedFlag = localStorage.getItem("quizStarted")
+      if(startedFlag){
+        this.setState({quizPage : true , isLogin : false , signInForm : false})
+      }
+      else if(localStorage.getItem("isUser")){
         this.setState({isLogin : true , signInForm : false , signUpForm : false})
       }
     }
@@ -330,7 +338,7 @@ class App extends Component {
         {isLogin && <Quizzes quizSelect ={this.quizSelect} quizList = {quizList} />}
         {quizDetails && <Quizdetails quizList={quizList} startQuiz={this.startQuiz} />}
         {protectkeyPage && <Protect submitKeyFunc={this.submitKey} />}
-        {quizPage && <Quizpage quizQuestions = {quizList} index={i} nextQuestion={this.nextQuestion} timeUpFunc={this.timeUp} />}
+        {quizPage && <Quizpage quizQuestions = {quizList} index={i} nextQuestion={this.nextQuestion} timeUpFunc={this.timeUp} returnToHome = {this.returnToHome} />}
       </div>
     );
   }

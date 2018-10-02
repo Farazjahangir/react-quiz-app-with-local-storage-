@@ -1,0 +1,550 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header has a valid snapshot 1`] = `
+<div>
+  <div
+    id="header"
+  >
+    <h2
+      className="text-white"
+    >
+      Assignment 5
+    </h2>
+    <h3
+      className="text-white"
+    >
+      Quiz App
+    </h3>
+    <p
+      className="text-white"
+    >
+      Faraz Jahangir
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Login has a valid snapshot 1`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 2`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 3`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 4`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 5`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 6`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Login has a valid snapshot 7`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign In To Your Account
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <input
+        className="btn btn-danger mx-1"
+        onClick={[Function]}
+        type="Button"
+        value="SignIn"
+      />
+      <input
+        className="btn btn-success"
+        onClick={undefined}
+        type="button"
+        value="Signup"
+      />
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Logout has a valid snapshot 1`] = `
+<div
+  className="text-center my-4"
+>
+  <input
+    className="btn btn-danger"
+    onClick={undefined}
+    type="button"
+    value="Logout"
+  />
+</div>
+`;
+
+exports[`Protect has a valid snapshot 1`] = `
+<div
+  className="input-group my-5 border"
+>
+  <input
+    className="form-control"
+    onChange={[Function]}
+    placeholder="Enter Proctoring Key"
+    type="password"
+    value=""
+  />
+  <input
+    className="btn btn-danger"
+    onClick={[Function]}
+    type="button"
+    value="Submit"
+  />
+</div>
+`;
+
+exports[`Signup has a valid snapshot 1`] = `
+<div>
+  <h2
+    className="text-center my-1"
+  >
+    Sign up
+  </h2>
+  <form>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="username"
+      >
+        Username:
+      </label>
+      <input
+        className="form-control"
+        id="username"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="email"
+      >
+        Email address:
+      </label>
+      <input
+        className="form-control"
+        id="email"
+        onChange={[Function]}
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="pwd"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="pwd"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <input
+      className="btn btn-danger mx-1"
+      onClick={[Function]}
+      type="button"
+      value="Submit"
+    />
+    <input
+      className="btn btn-primary"
+      onClick={undefined}
+      type="button"
+      value="SignIn"
+    />
+  </form>
+</div>
+`;
